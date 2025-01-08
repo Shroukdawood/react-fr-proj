@@ -9,6 +9,11 @@ import Error404 from "./Pages/Error404"
 import Content from './Pages/Contant/Content';
 import Registration from './Pages/Registeration/Registration';
 import LogIn from './Pages/Log in/LogIn';
+import Student from './Pages/Student/Student';
+import Profile from './Pages/Student/children/Profile/Profile';
+import Courses from './Pages/Student/children/Courses/Courses';
+import Course from './Pages/Student/children/Course/Course';
+import StudentLayout from './Layout/StudentLayout';
 function App() {
   const routes= useRoutes([{
     path:"/",
@@ -32,6 +37,30 @@ function App() {
 {
   path:"/login",
   element:<LogIn/>
+},
+{
+  path:"/student",
+  children:[{
+element:<StudentLayout/>,
+children:[{
+  path:"",
+  element:<Student/>},
+  {
+    path:"profile",
+    element:<Profile/>
+  },
+  {
+    path:"courses",
+    element:<Courses/>
+  }
+]
+  }
+    ,{
+      path:"course/:courseId",
+      element:<Course/>
+    },
+    
+  ]
 }
 ])
   return  (<>

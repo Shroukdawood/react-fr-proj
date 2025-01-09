@@ -14,60 +14,61 @@ import Profile from './Pages/Student/children/Profile/Profile';
 import Courses from './Pages/Student/children/Courses/Courses';
 import Course from './Pages/Student/children/Course/Course';
 import StudentLayout from './Layout/StudentLayout';
+import MainLayout from './Layout/MainLayout';
+
 function App() {
   const routes= useRoutes([{
-    path:"/",
-    element:<Home/>
-  },
-{
-  path:"/about",
-  element:<About/>
-},
-{
-  path:"/*",
-  element:<Error404/>
-},{
-  path:"/content",
-  element:<Content/>
-},
-{
-  path:"/registration",
-  element:<Registration/>
-},
-{
-  path:"/login",
-  element:<LogIn/>
-},
-{
-  path:"/student",
-  children:[{
-element:<StudentLayout/>,
-children:[{
-  path:"",
-  element:<Student/>},
-  {
-    path:"profile",
-    element:<Profile/>
-  },
-  {
-    path:"courses",
-    element:<Courses/>
-  }
-]
-  }
-    ,{
-      path:"course/:courseId",
-      element:<Course/>
+    element:<MainLayout/>,
+    children:[{
+      path:"/",
+      element:<Home/>
     },
-    
+  {
+    path:"/about",
+    element:<About/>
+  },
+  {
+    path:"/*",
+    element:<Error404/>
+  },{
+    path:"/content",
+    element:<Content/>
+  },
+  {
+    path:"/registration",
+    element:<Registration/>
+  },
+  {
+    path:"/login",
+    element:<LogIn/>
+  },
+  {
+    path:"/student",
+    children:[{
+  element:<StudentLayout/>,
+  children:[{
+    path:"",
+    element:<Student/>},
+    {
+      path:"profile",
+      element:<Profile/>
+    },
+    {
+      path:"courses",
+      element:<Courses/>
+    }
   ]
-}
-])
-  return  (<>
-  <MainNavbar/>
-{routes}
-  <MainFooter/>
-  </>)
-
+    }
+      ,{
+        path:"course/:courseId",
+        element:<Course/>
+      },
+      
+    ]
+  }
+  ]
+  
+  }]);
+    return (<>{ routes }</>);
   }
   export default App

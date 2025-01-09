@@ -1,18 +1,19 @@
 import React from 'react'
-import MainNavbar from '../commponet/mainNavbar'
-import MainFooter from '../commponet/MainFooter'
+import MainNavbar from '../components/MainNavbar'
+import MainFooter from '../components/MainFooter'
 import { Outlet } from 'react-router-dom'
 
 export default function MainLayout() {
-  return (
-    <>
+  return (<>
     <MainNavbar/>
-     <main className='bg-secondary'>
+    <main className='bg-secondary'>
         <section className='container py-5'>
-         <Outlet/>
+        <Outlet/>
         </section>
      </main>
+
     <MainFooter/>
     </>
   )
 }
+

@@ -41,8 +41,8 @@ name : "Error" ,
   path:"/counter"
 },
 {
-  name:"Proudects",
-  path:"/proudects"
+  name:"Products",
+  path:"/products"
 }
 ]
 

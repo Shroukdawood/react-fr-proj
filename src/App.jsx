@@ -15,6 +15,8 @@ import Courses from './Pages/Student/children/Courses/Courses';
 import Course from './Pages/Student/children/Course/Course';
 import StudentLayout from './Layout/StudentLayout';
 import MainLayout from './Layout/MainLayout';
+import Counter from './Pages/Counter/Counter';
+import Products from './Pages/Products/Products';
 
 function App() {
   const routes= useRoutes([{
@@ -41,6 +43,15 @@ function App() {
   {
     path:"/login",
     element:<LogIn/>
+  },
+  {
+    path:"/counter",
+    element:<Counter/>
+  }
+  ,
+  {
+    path:"/products",
+    element:<Products/>
   },
   {
     path:"/student",

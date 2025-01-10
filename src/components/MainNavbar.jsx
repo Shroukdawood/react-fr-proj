@@ -5,9 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import MainNavLink from "./MainNavLink";
+import { useCounterContext } from '../contexts/CounterContext';
 
 function MainNavbar() {
-const links = [
+
+const {counter} = useCounterContext();
+
+    const links = [
   {
   name : "Home" ,
   path :"/"
@@ -49,7 +53,7 @@ name : "Error" ,
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Navbar scroll {counter}</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

@@ -17,6 +17,8 @@ import StudentLayout from './Layout/StudentLayout';
 import MainLayout from './Layout/MainLayout';
 import Counter from './Pages/Counter/Counter';
 import Products from './Pages/Products/Products';
+import { CounterProvider } from './contexts/CounterContext';
+import { ProductProvider } from './contexts/ProductContext';
 
 function App() {
   const routes= useRoutes([{
@@ -51,7 +53,7 @@ function App() {
   ,
   {
     path:"/products",
-    element:<Products/>
+    element:<ProductProvider> <Products/> </ProductProvider> 
   },
   {
     path:"/student",
@@ -80,6 +82,6 @@ function App() {
   ]
   
   }]);
-    return (<>{ routes }</>);
+    return (<CounterProvider>{ routes }</CounterProvider>);
   }
   export default App
